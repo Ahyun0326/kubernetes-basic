@@ -3,7 +3,6 @@ version: "3"
 services:
   wordpress:
     image: wordpress:5.9.1-php8.1-apache
-    platform: linux/amd64
     environment:
       WORDPRESS_DB_HOST: mysql
       WORDPRESS_DB_NAME: wordpress
@@ -14,7 +13,6 @@ services:
 
   mysql:
     image: mariadb:10.7
-    platform: linux/amd64
     environment:
       MYSQL_DATABASE: wordpress
       MYSQL_ROOT_PASSWORD: password
