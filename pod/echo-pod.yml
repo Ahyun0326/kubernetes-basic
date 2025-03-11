@@ -7,4 +7,12 @@ metadata:
 spec:
   containers:
     - name: app
-      image: ghcr.io/subicura/echo:v10
+      image: ghcr.io/subicura/echo:v1
+      livenessProbe:
+        httpGet:
+          path: /not/exist
+          port: 8080
+        initialDelaySeconds: 5
+        timeoutSeconds: 2 # Defaults 1
+        periodSeconds: 5 # Defaults 10
+        failureThreshold: 1 # Defaults 3
